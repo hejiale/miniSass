@@ -1,0 +1,11 @@
+@charset "UTF-8";
+// 避免WebStorm 单位rpx 报错
+// 设计图的尺寸是375px的, 而微信小程序规定屏幕宽度为750rpx
+// rpx函数传进来的值按照设计图上的px写, 自动转成相对应的rpx
+@function rpx($value) {
+  @if($value >= 560){
+    @return ($value / 812) * 100vh
+  }@else{
+    @return $value * 2 * 1rpx
+  }
+}

@@ -1,0 +1,1015 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "pageOrientation": "portrait",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "navigationBarBackgroundColor": "#996fe7",
+        "usingComponents": {}
+      }
+    },
+    {
+      "path": "pages/my/index",
+      "style": {
+        "pageOrientation": "portrait",
+        "navigationStyle": "custom",
+        "usingComponents": {}
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "compere-manage",
+      "pages": [
+        {
+          "path": "pages/personnel/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/personnel/updateJob",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/personnel/permission",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "app-payPage",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "reservation-package",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "city-gathering",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "discover",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "store-package",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/album",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/evaluate",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/dramaList",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/dmList",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/evaluateDetail",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/report",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "pageDetail",
+      "pages": [
+        {
+          "path": "pages/pageDetail",
+          "style": {
+            "navigationStyle": "custom",
+            "onPageScroll": true,
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/scriptReview",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "dynamicDetail",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/postupdates",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "webview",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "rankingList",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "inviteAddidtant",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/invite",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "storeOrder",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/detail",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "balance",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/withdrawal",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/h5Page",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "scriptNavigation",
+      "pages": [
+        {
+          "path": "pages/Details",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "剧本详情",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "incomingParts",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "individual",
+      "pages": [
+        {
+          "path": "pages/merchant-apply",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/apply-detail",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/h5-page",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "enterprise",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/apply-detail",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/h5-page",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/bank",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationBarTitleText": "选择银行",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/subBank",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationBarTitleText": "选择支行",
+            "navigationBarBackgroundColor": "#f5f5f5",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "script-manage",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/export",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/batch-price",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "gather-store",
+      "pages": [
+        {
+          "path": "pages/bureau",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/bureau-detail",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "组局详情",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/bureau-create",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "manage",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/storeInfo",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/editStoreDesc",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/coupon-packet",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "applyDrama",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/applyDramaDetail",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/applyDrama",
+          "style": {
+            "navigationBarBackgroundColor": "#f5f5f5",
+            "backgroundColor": "#f5f5f5",
+            "usingComponents": {},
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/editMyAddress",
+          "style": {
+            "navigationBarBackgroundColor": "#f5f5f5",
+            "backgroundColor": "#f5f5f5",
+            "usingComponents": {},
+            "navigationBarTitleText": "编辑地址"
+          }
+        },
+        {
+          "path": "pages/applyComplete",
+          "style": {
+            "navigationBarBackgroundColor": "#f5f5f5",
+            "backgroundColor": "#f5f5f5",
+            "usingComponents": {},
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "murderMysteryList",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/Details",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "剧本详情",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "my-package",
+      "pages": [
+        {
+          "path": "pages/personal-Infor",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationBarTitleText": "个人资料",
+            "navigationBarBackgroundColor": "#f5f5f5",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/setting-Infor",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationBarTitleText": "个人设置",
+            "navigationBarBackgroundColor": "#f5f5f5",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/store-entry",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationBarTitleText": "店铺入驻",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/havenstore-entry",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationBarTitleText": "我的店铺",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/edit-user",
+          "style": {
+            "navigationBarTitleText": "编辑信息",
+            "navigationBarBackgroundColor": "#f5f5f5",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/edit-shop",
+          "style": {
+            "navigationBarTitleText": "编辑信息",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/Examine",
+          "style": {
+            "navigationBarTitleText": "店铺审核",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F5F5F5",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/agreeIndex",
+          "style": {
+            "navigationBarTitleText": "服务协议"
+          }
+        },
+        {
+          "path": "pages/privaryIndex",
+          "style": {
+            "navigationBarTitleText": "隐私政策"
+          }
+        },
+        {
+          "path": "pages/orderList",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/orderDetail",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/trends/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/shopVisited/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/dynamicState/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "usingComponents": {},
+            "navigationBarTitleText": "我的动态"
+          }
+        },
+        {
+          "path": "pages/wantPlayBen/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/editUserDesc",
+          "style": {
+            "pageOrientation": "portrait",
+            "usingComponents": {},
+            "navigationBarTitleText": "个人描述"
+          }
+        },
+        {
+          "path": "pages/sub-setting",
+          "style": {
+            "pageOrientation": "portrait",
+            "usingComponents": {},
+            "navigationBarTitleText": "商家认证"
+          }
+        },
+        {
+          "path": "pages/myEvaluate",
+          "style": {
+            "pageOrientation": "portrait",
+            "usingComponents": {},
+            "navigationBarTitleText": "我的剧评"
+          }
+        }
+      ]
+    },
+    {
+      "root": "game-player",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "pageOrientation": "landscape",
+            "navigationStyle": "custom",
+            "navigationBarTextStyle": "white"
+          }
+        }
+      ]
+    },
+    {
+      "root": "game-DM",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "pageOrientation": "portrait",
+            "navigationStyle": "custom",
+            "navigationBarTextStyle": "white"
+          }
+        },
+        {
+          "path": "pages/playerPhone",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTextStyle": "white"
+          }
+        },
+        {
+          "path": "pages/playerEmail",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTextStyle": "white"
+          }
+        },
+        {
+          "path": "pages/emailDetail",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTextStyle": "white",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "order",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/detail",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "gatherPlayer",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "goChoodeCity/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/goGather",
+          "style": {
+            "usingComponents": {},
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/selectDrama",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/payOrder",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/myGather",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "report",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "lovepotion",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/book",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/personal/index",
+          "style": {
+            "usingComponents": {},
+            "navigationBarTitleText": "个人资料"
+          }
+        },
+        {
+          "path": "pages/personal/edit",
+          "style": {
+            "usingComponents": {},
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/detail",
+          "style": {
+            "usingComponents": {},
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/successBook",
+          "style": {
+            "usingComponents": {},
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/agreement",
+          "style": {
+            "usingComponents": {},
+            "navigationBarTitleText": "LovePotion活动参与协议"
+          }
+        },
+        {
+          "path": "pages/inviter",
+          "style": {
+            "usingComponents": {},
+            "navigationBarTitleText": "邀请好友"
+          }
+        },
+        {
+          "path": "pages/memberEquity",
+          "style": {
+            "usingComponents": {},
+            "navigationBarTitleText": "会员权益",
+            "navigationBarBackgroundColor": "#F5F6F8"
+          }
+        },
+        {
+          "path": "pages/buyMember",
+          "style": {
+            "usingComponents": {},
+            "navigationBarTitleText": "选择会员服务内容",
+            "navigationBarBackgroundColor": "#F5F9FB"
+          }
+        },
+        {
+          "path": "pages/buySuccess",
+          "style": {
+            "usingComponents": {},
+            "navigationBarTitleText": "会员服务权益",
+            "navigationBarBackgroundColor": "#F5F9FB"
+          }
+        },
+        {
+          "path": "pages/recordPage",
+          "style": {
+            "usingComponents": {},
+            "navigationBarTitleText": "会员购买记录",
+            "navigationBarBackgroundColor": "#F5F9FB"
+          }
+        }
+      ]
+    },
+    {
+      "root": "LP-mate",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/infomation",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/match-count",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/inviteList",
+          "style": {
+            "navigationBarTitleText": "邀请一起参与剧场",
+            "navigationBarBackgroundColor": "#F5F9FB",
+            "usingComponents": {}
+          }
+        },
+        {
+          "path": "pages/matchRecord",
+          "style": {
+            "navigationBarTitleText": "匹配记录",
+            "navigationBarBackgroundColor": "#F5F9FB",
+            "usingComponents": {}
+          }
+        }
+      ]
+    },
+    {
+      "root": "LP-answer",
+      "pages": [
+        {
+          "path": "pages/index",
+          "style": {
+            "navigationStyle": "custom",
+            "usingComponents": {}
+          }
+        }
+      ]
+    }
+  ],
+  "tabBar": {
+    "color": "#CCCCCC",
+    "selectedColor": "#14C9C9 ",
+    "borderStyle": "white",
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/image/tab/homePage.png",
+        "selectedIconPath": "static/image/tab/sel-homePage.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "static/image/tab/myUser.png",
+        "selectedIconPath": "static/image/tab/sel-myUser.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "剧游宇宙",
+    "navigationBarBackgroundColor": "#FFF",
+    "backgroundColor": "#fff",
+    "usingComponents": {
+      "van-icon": "wxcomponents/vant/icon/index",
+      "van-button": "wxcomponents/vant/button/index",
+      "van-empty": "wxcomponents/vant/empty/index",
+      "van-rate": "wxcomponents/vant/rate/index",
+      "van-field": "wxcomponents/vant/field/index",
+      "van-action-sheet": "wxcomponents/vant/action-sheet/index",
+      "van-progress": "wxcomponents/vant/progress/index",
+      "van-search": "wxcomponents/vant/search/index",
+      "van-toast": "wxcomponents/vant/toast/index",
+      "van-cell": "wxcomponents/vant/cell/index",
+      "van-cell-group": "wxcomponents/vant/cell-group/index",
+      "van-popup": "wxcomponents/vant/popup/index",
+      "van-datetime-picker": "wxcomponents/vant/datetime-picker/index",
+      "van-image": "wxcomponents/vant/image/index",
+      "van-radio": "wxcomponents/vant/radio/index",
+      "van-radio-group": "wxcomponents/vant/radio-group/index",
+      "van-picker": "wxcomponents/vant/picker/index",
+      "van-checkbox": "wxcomponents/vant/checkbox/index",
+      "van-stepper": "wxcomponents/vant/stepper/index",
+      "van-switch": "wxcomponents/vant/switch/index",
+      "van-uploader": "wxcomponents/vant/uploader/index",
+      "van-divider": "wxcomponents/vant/divider/index",
+      "van-dialog": "wxcomponents/vant/dialog/index",
+      "van-overlay": "wxcomponents/vant/overlay/index",
+      "van-transition": "wxcomponents/vant/transition/index",
+      "van-count-down": "wxcomponents/vant/count-down/index",
+      "van-skeleton": "wxcomponents/vant/skeleton/index",
+      "van-swipe-cell": "wxcomponents/vant/swipe-cell/index",
+      "van-tab": "wxcomponents/vant/tab/index",
+      "van-tabs": "wxcomponents/vant/tabs/index",
+      "van-slider": "wxcomponents/vant/slider/index",
+      "wxml-to-canvas": "wxcomponents/wxml-to-canvas/index"
+    }
+  }
+}

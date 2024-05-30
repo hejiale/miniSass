@@ -1,0 +1,227 @@
+/*
+* WXS无法修改业务数据，仅能设置当前组件的class和style
+* 可通过callMethod调用逻辑层函数
+* WXS事件处理函数function(event, ownerInstance){}
+* event.instance.$el 是触发事件的原始元素
+* event.currentTarget.dataset 可获取元素在xml上的dataset
+* ownerInstance.selectComponent('.test')可筛选其他元素
+* ownerInstance.callMethod('longpressItem', null)可调用逻辑层vue对象的函数
+* 
+* 无法通过getBoundingClientRect获取元素的真实位置，所以通过相对移动计算。
+*/
+var instance = null;
+var ownerIst = null;
+var touchIdx = null;
+var sortThresRate = 0.2; // 当对象移动距离超过itemWidth和itemHeight的20%时，检测是否有可能存在重合
+var overlapThres = 0.6; // 当前对象和其他对象进行交换时，宽度和高度全部重合的最小比例
+var lastMove = {x: 0, y: 0};
+var moveCnt = 0;
+var data = {
+	pageScroll: 0,
+	startX: 0,
+	startY: 0,
+	lastTouchY: 0,
+	startDrag: false,
+	active: -1, // 当前激活的item
+	isSwaped: false, // 本次移动是否交换了元素
+	allowDrag: false, // 是否允许拖动
+	isSorting: false, // 是否正在排序
+	itemHeight: 40, // 图片高度，根据传入值计算
+	itemWidth: 40, // 图片宽度，根据传入值计算
+	column: 1, // 根据width计算
+	realMarginX: 0, // 根据margin计算
+	realMarginY: 0, // 根据margin计算
+	currentList: [],
+	version: 0,
+};
+function paramUpdate(newVal, oldVal, owner, instance_){
+	if(!newVal)return;
+	instance = instance_;
+	ownerIst = owner;
+	var new_keys = ['allowDrag', 'currentList', 'itemWidth', 'itemHeight', 'realMarginY', 'realMarginX', 'column', 'version'];
+	for(var i = 0; i < new_keys.length; i++){
+		var key = new_keys[i];
+		var val = newVal[key];
+		var oldVal = data[key];
+		if(oldVal == val)continue;
+		if(key == 'currentList' && oldVal && oldVal.length == val.length){
+			continue;
+		}
+		data[key] = val;
+	}
+}
+function onBoxScroll(e){
+	data.pageScroll = e.detail.scrollTop;
+}
+function mouseDown(e){
+	//longpress事件中，无法获取dataset，因为节点不一样
+	touchIdx = Number(e.instance.getDataset().idx);
+	console.log('mouse down:', touchIdx);
+	// 记录点击位置，方便后续滚动
+	var touch = e.touches[0] || e.changedTouches[0];
+	data.lastTouchY = touch.clientY;
+}
+/**
+ * 将长按作为拖动的起始事件，防止影响滑动
+ * @param {Object} e
+ * @param {Object} owner
+ */
+function longpressItem(e, owner){
+	touchstart(e, owner);
+	owner.callMethod('longpressItem', {
+		type: e.type,
+		timeStamp: e.timeStamp,
+		detail: e.detail,
+		target: e.target,
+		currentTarget: e.currentTarget,
+		touches: e.touches
+	});
+	return false; // 阻止冒泡
+}
+// 监听按下事件
+function touchstart(e, owner) {
+	if (!data.allowDrag) return;
+	data.isSorting = false;
+	data.startDrag = true;
+	data.isSwaped = false;
+	data.active = touchIdx;
+	var touch = e.touches[0] || e.changedTouches[0];
+	data.startX = touch.clientX;
+	data.startY = touch.clientY;
+	lastMove = {x: touch.clientX, y: touch.clientY};
+	var item = data.currentList[touchIdx];
+	item.initX = item.x;
+	item.initY = item.y;
+	owner.callMethod('setActive', touchIdx);
+}
+// 监听移动事件
+function touchmove(e, owner) {
+	var curMove = e.touches[0] || e.changedTouches[0];
+	if (data.active < 0 || !data.allowDrag || !data.startDrag) {
+		// 实现页面滚动
+		var goPos = data.pageScroll + (data.lastTouchY - curMove.clientY);
+		owner.callMethod('setBoxScroll', Math.max(goPos, 0));
+		data.lastTouchY = curMove.clientY;
+		moveCnt += 1;
+		if(data.pageScroll == 0 && moveCnt % 10 == 0){
+			console.log('prop `pageScroll` not change, page scroll may be error');
+		}
+		return;
+	}
+	var totalMoveX = curMove.clientX - data.startX;
+	var totalMoveY = curMove.clientY - data.startY;
+	var moveItem = data.currentList[data.active];
+	moveItem.x = moveItem.initX + totalMoveX;
+	moveItem.y = moveItem.initY + totalMoveY;
+	e.instance.setStyle({
+		left: moveItem.x + 'px',
+		top: moveItem.y + 'px'
+	});
+	var xMoveScale = Math.abs(curMove.clientX - lastMove.x) / data.itemWidth;
+	var yMoveScale = Math.abs(curMove.clientY - lastMove.y) / data.itemHeight;
+	// 只有当本次坐标距离上次超过一定距离时才重新触发排序检测
+	if(data.isSorting || xMoveScale < sortThresRate && yMoveScale < sortThresRate)return;
+	lastMove = {x: curMove.clientX, y: curMove.clientY};
+	data.isSorting = true;
+	var widthThres = data.itemWidth * (1 - overlapThres);
+	var heightThres = data.itemHeight * (1 - overlapThres);
+	for(var index = 0; index < data.currentList.length; index ++){
+		if(data.active == index)continue;
+		var other = data.currentList[index];
+		var distX = Math.abs(moveItem.x - other.x);
+		var distY = Math.abs(moveItem.y - other.y);
+		if (distX <= widthThres && distY <= heightThres) {
+			// 重合范围达到阈值，重新排序
+			var targetId = other.order_num;
+			// console.log('drag [' + moveItem.index + ']' + moveItem.order_num + ' to [' + other.index + ']' + targetId);
+			if(targetId == moveItem.order_num){
+				console.log('active has same order_num with target: ' + targetId);
+				break;
+			}
+			// 假设向后移动
+			var startIdx = moveItem.order_num + 1, stopIdx = targetId, sortChange = -1;
+			if(moveItem.order_num > targetId){
+				startIdx = targetId, stopIdx = moveItem.order_num - 1, sortChange = 1;
+			}
+			console.log('move items, start, stop, add', startIdx, stopIdx, sortChange);
+			// currentList顺序可能是乱的，需要逐个筛选
+			var affects = data.currentList.filter(function(it){
+				return it.order_num >= startIdx && it.order_num <= stopIdx;
+			});
+			affects.forEach(function(it){
+				it.order_num += sortChange;
+			});
+			moveItem.order_num = targetId;
+			locateByOrderNum(data.active);
+			data.isSwaped = true;
+			break;
+		}
+	}
+	data.isSorting = false;
+	return false;
+}
+// 监听取消事件
+function touchcancel(e, owner){
+	data.startDrag = false;
+	if(data.active < 0)return;
+	var moveItem = data.currentList[data.active];
+	moveItem.x = moveItem.initX;
+	moveItem.y = moveItem.initY;
+	e.instance.setStyle({
+		left: moveItem.initX + 'px',
+		top: moveItem.initY + 'px',
+	});
+	owner.callMethod('setActive', -1);
+}
+// 监听点击结束事件
+function touchend(e, owner) {
+	data.startDrag = false;
+	if(data.active < 0 || !data.isSwaped){
+		touchcancel(e, owner);
+		return;
+	}
+	locateByOrderNum(-1, true);
+	var arr = data.currentList.slice(0);
+	arr.sort(function(a, b){
+		return a.order_num - b.order_num;
+	});
+	data.active = -1;
+	owner.callMethod('setActive', -1);
+	owner.callMethod('update_img_list', arr);
+}
+// 根据order_num重新计算所有元素位置
+function locateByOrderNum(ignoreIndex = -1, resetInit=false) {
+	for (var i = 0; i < data.currentList.length; i++) {
+		if(i == ignoreIndex)continue;
+		var item = data.currentList[i];
+		var key = parseInt(item.order_num);
+		var top = 0;
+		if(key > 1){
+			top = (Math.ceil((key + 2) / data.column) - 1) * (data.itemHeight + data.realMarginY);
+		}
+		
+		var left = ((key+1) % data.column) * (data.itemWidth + data.realMarginX);
+		if(item.x == left && item.y == top)continue;
+		// console.debug('item ' + i + ' move (' + item.x + ',' + item.y + ') to (' + left + ',' + top + ')');
+		item.x = left;
+		item.y = top;
+		if(resetInit){
+			item.initX = left;
+			item.initY = top;
+		}
+		var elt = ownerIst.selectComponent('.drag-item-' + i);
+		elt.setStyle({
+			top: top + 'px',
+			left: left + 'px'
+		});
+	}
+}
+module.exports = {
+	paramUpdate: paramUpdate,
+	mouseDown: mouseDown,
+	touchmove: touchmove,
+	touchend: touchend,
+	touchcancel: touchcancel,
+	longpressItem: longpressItem,
+	onBoxScroll: onBoxScroll
+}

@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@import "./function";
+
+//  Colors
+$primaryColor: #14C9C9 ;
+$success: #499C63;
+$blue: #496FFC;
+$black: #363434;
+$grey: #8C9AA3;
+$border-grey: #EEEEEE;
+$red: #E75154;
+
+//  Font Size
+$font-larger: rpx(20);
+$font-large: rpx(16);
+$font-normal: rpx(14);
+$font-small: rpx(12);
+$font-smaller: rpx(10);
+
+//  Padding
+$gap-smaller: rpx(4);
+$gap-small: rpx(12);
+$gap-primary: rpx(16);
+$gap-content: rpx(20);
+
+//  Radius
+$gap-radius: rpx(8)

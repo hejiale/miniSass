@@ -1,0 +1,605 @@
+@import "./varibles", "./mixins";
+
+body {
+    margin: 0 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    font-size: 24rpx;
+}
+
+image {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+@each $gap in (-4, 0, 2, 4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 22, 24, 28, 32, 40, 52) {
+    $val: #{$gap  * 2}rpx;
+
+    @if $val ==rpx(0) {
+        $val: 0;
+    }
+
+    .m#{$gap} {
+        margin: $val;
+    }
+
+    .mt#{$gap} {
+        margin-top: $val;
+    }
+
+    .mr#{$gap} {
+        margin-right: $val;
+    }
+
+    .mb#{$gap} {
+        margin-bottom: $val;
+    }
+
+    .ml#{$gap} {
+        margin-left: $val;
+    }
+
+    .mx#{$gap} {
+        margin-left: $val;
+        margin-right: $val;
+    }
+
+    .my#{$gap} {
+        margin-top: $val;
+        margin-bottom: $val;
+    }
+
+    .p#{$gap} {
+        padding: $val;
+    }
+
+    .pt#{$gap} {
+        padding-top: $val;
+    }
+
+    .pr#{$gap} {
+        padding-right: $val;
+    }
+
+    .pb#{$gap} {
+        padding-bottom: $val;
+    }
+
+    .pl#{$gap} {
+        padding-left: $val;
+    }
+
+    .px#{$gap} {
+        padding-left: $val;
+        padding-right: $val;
+    }
+
+    .py#{$gap} {
+        padding-top: $val;
+        padding-bottom: $val;
+    }
+}
+
+.hor-between-center {
+    @include hor-between-center
+}
+
+.hor-start-center {
+    @include hor-start-center
+}
+
+.hor-center-center {
+    @include hor-center-center
+}
+
+.text-weight {
+    @include text-weight();
+}
+
+.text-gray {
+    @include text-gray();
+}
+
+.orange {
+    color: $primaryColor !important;
+}
+
+.red {
+    color: $red !important;
+}
+
+.grey {
+    color: $grey !important;
+}
+
+.van-cell {
+    align-items: center;
+}
+
+.contacts {
+    font-size: 34rpx;
+    color: #363434;
+    font-weight: bold;
+    font-family: "OPPOSans", "OPPOSans-Bold";
+}
+
+.bottom-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.navigation-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    box-shadow: 0px 0px 0px 50px rgba(0, 0, 0, 0.5);
+}
+
+.navigation-bg-shopInfo {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.girl {
+    border-radius: 50rpx 15rpx 15rpx 50rpx !important;
+}
+
+.boy {
+    border-radius: 15rpx 50rpx 50rpx 15rpx !important;
+}
+
+.navigation-title {
+    color: rgba(0, 0, 0, 1);
+    font-size: 34rpx;
+    font-weight: 700;
+    text-align: center;
+    line-height: 44rpx;
+}
+
+.cell-label_left {
+    font-size: 28rpx;
+    font-weight: 400;
+    text-align: left;
+    line-height: 40rpx;
+}
+
+.cell-label_right {
+    font-size: 28rpx;
+    font-weight: 700;
+    text-align: right;
+    line-height: 40rpx;
+}
+
+.custom-content_cell {
+    height: 104rpx;
+}
+
+.mp-btn {
+    @include hor-center-center;
+    width: rpx(275);
+    height: rpx(44);
+    border-radius: rpx(41);
+    font-size: rpx(16);
+    color: #FFF;
+    border: rpx(1) solid transparent;
+    background: #14C9C9;
+
+    &.fixed {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: rpx(42);
+        margin: auto;
+    }
+
+    &.default {
+        background-color: #FFF;
+        font-size: rpx(16);
+        font-family: PingFang SC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #14C9C9;
+        border: 1px solid #14C9C9;
+    }
+}
+
+.mp-unset-btn {
+    @include hor-center-center;
+    width: rpx(275);
+    height: rpx(44);
+    border-radius: rpx(41);
+    font-size: rpx(16);
+    color: #FFF;
+    border: rpx(1) solid transparent;
+    background: gray;
+}
+
+.tk-btn {
+    @include hor-center-center;
+    width: rpx(275);
+    height: rpx(44);
+    border-radius: rpx(40);
+    font-size: rpx(16);
+    color: #FFF;
+    background: linear-gradient(150deg, #1ee9c4 0%, #14c9c9 100%);
+    ;
+    box-shadow: 0px 8px 9px 0px rgba(36, 237, 213, 0.25);
+    border: rpx(1) solid transparent;
+
+    &.fixed {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: rpx(34);
+        margin: auto;
+    }
+
+    &.default {
+        background: linear-gradient(150deg, #1EE9C4 0%, #14C9C9 100%);
+    }
+}
+
+.navigation-bg {
+    &__mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -2;
+        filter: blur(rpx(15));
+    }
+
+    &__blur {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -3;
+    }
+}
+
+//  财务管理背景板
+.finance-bg {
+    position: fixed;
+    width: 100%;
+    height: rpx(263);
+    margin: 0 auto;
+    top: rpx(-40);
+    left: 0;
+    right: 0;
+
+    image {
+        width: rpx(375);
+        height: rpx(263);
+    }
+}
+
+.finance-manage {
+    .navigation-bar {
+        background: linear-gradient(#0095E9, #3775F6) !important;
+    }
+
+    &__con {
+        background-color: #FFF;
+        padding: rpx(16);
+    }
+
+    .ticketing-line {
+        image {
+            height: rpx(28);
+        }
+    }
+
+    &__top {
+        border-radius: rpx(16) rpx(16) 0 0;
+    }
+
+    &__bottom {
+        border-radius: 0 0 rpx(16) rpx(16);
+
+        &--btn {
+            margin-top: rpx(22);
+            margin-bottom: rpx(34);
+        }
+    }
+}
+
+//  开通子商户号相关
+.open-merchant {
+
+    // .navigation-bg-shopInfo {
+    //     filter: blur(0);
+    // }
+    &__content {
+        background: #FFFFFF;
+        border-radius: 8px;
+    }
+
+    &__smallTitle {
+        font-size: rpx(12);
+        font-family: PingFang SC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #14C9C9;
+        line-height: 20px;
+    }
+
+    &__note {
+        height: 24px;
+        background: rgba(254, 243, 230, 0.5);
+        font-size: 12px;
+        font-family: PingFang SC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #FFA66A;
+        line-height: 24px;
+        padding-left: rpx(8);
+        margin-top: rpx(9);
+    }
+
+    .placeholder-color {
+        color: #BBB;
+        font-size: $font-normal;
+    }
+
+    &__hint {
+        width: 100%;
+        // @include hor-center-center;
+        color: #888888;
+        padding: rpx(8) 0;
+        background: #FEF3E6;
+        font-size: rpx(14);
+        font-family: PingFang SC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #ED7B2F;
+
+        &.danger {
+            background-color: rgba(255, 0, 0, 0.6);
+            color: #FFF;
+        }
+
+        image {
+            margin-left: rpx(16);
+            margin-right: rpx(8);
+            width: rpx(22);
+            height: rpx(22);
+        }
+    }
+
+    &__title {
+        @include text-weight(rpx(15));
+        position: relative;
+        padding-left: rpx(11);
+
+        &::before {
+            content: "";
+            display: block;
+            width: rpx(4);
+            height: rpx(16);
+            border-radius: rpx(2);
+            background: #14C9C9;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        &::after {
+            content: "（必填）";
+            color: #FA5252;
+            font-family: PingFang SC-Regular, PingFang SC;
+            font-weight: 400;
+        }
+
+        span {
+            font-size: rpx(16);
+            font-family: PingFang SC-Semibold, PingFang SC;
+            font-weight: 600;
+            color: #333333;
+        }
+    }
+
+    &__group {
+        // margin-bottom: rpx(40);
+    }
+
+    &__cell {
+        margin-top: rpx(23);
+        font-size: $font-normal;
+
+        &.is-required {
+            .open-merchant__cell--title::before {
+                content: "*";
+                color: $red;
+                margin-right: rpx(4);
+            }
+        }
+
+        &--title {
+            margin-bottom: rpx(8);
+            flex: none;
+            margin-right: rpx(12);
+            font-size: rpx(14);
+            font-family: PingFang SC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #333333;
+            line-height: 16px;
+        }
+
+        &--value {
+            color: #666666;
+            font-size: 28rpx;
+        }
+
+        &--placeholder {
+            font-size: 26rpx;
+            color: lightgray;
+        }
+
+        &--note {
+            margin-top: 8px;
+            font-size: rpx(11);
+            font-family: PingFang SC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #999999;
+            line-height: 13px;
+        }
+
+        &--input {
+            width: 100%;
+            border-bottom: rpx(0.5) solid rgba(0, 0, 0, 0.2);
+            color: #666666;
+            height: rpx(25);
+        }
+
+        .van-uploader__upload {
+            margin: 0;
+        }
+
+        &--box {
+            margin-right: rpx(16);
+            text-align: center;
+
+            &-tag {
+                width: rpx(64);
+                height: rpx(64);
+            }
+        }
+
+        &--text {
+            font-size: $font-normal;
+            color: #BBBBBB;
+            margin-top: rpx(6)
+        }
+
+        &--img {
+            @include react(rpx(80));
+
+            image {
+                border-radius: rpx(8);
+            }
+        }
+
+        &-add {
+            width: rpx(48);
+            height: rpx(48);
+        }
+    }
+
+    &__memo {
+        font-size: rpx(12);
+        color: #999;
+        font-family: PingFang SC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #999999;
+        line-height: 14px;
+    }
+
+    &__select {
+        @include hor-between-center;
+        font-size: $font-normal;
+        margin-top: rpx(23);
+
+        &.is-required {
+            .open-merchant__select--title::before {
+                content: "*";
+                color: $red;
+                margin-right: rpx(4);
+            }
+        }
+
+        &--value {
+            @include hor-start-center;
+
+            span {
+                color: #BBB;
+            }
+
+            .van-icon {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.titleImg-badge {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-bottom-right-radius: $gap-radius;
+    overflow: hidden;
+
+    &__bg {
+        @include react(rpx(34));
+
+        &.EXCLUSIVE {
+            background: linear-gradient(to bottom right, transparent 0%, transparent 49.9%, #FE6989 50%, #FF928B 100%);
+        }
+
+        &.BOXED {
+            background: linear-gradient(to bottom right, transparent 0%, transparent 49.9%, #3779FF 50%, #02C6FF 100%);
+        }
+
+        &.LIMITED {
+            background: linear-gradient(to bottom right, transparent 0%, transparent 49.9%, #5655E6 50%, #3E86FF 100%);
+        }
+
+        &.REAL_SCENE {
+            background: linear-gradient(to bottom right, transparent 0%, transparent 49.9%, #FF7043 50%, #FFA726 100%);
+        }
+
+        &.UNDETERMINED {
+            background: linear-gradient(to bottom right, transparent 0%, transparent 49.9%, #C2C7CB 50%, #C2C7CB 100%);
+        }
+    }
+
+    &__txt {
+        color: #fff;
+        position: absolute;
+        bottom: rpx(6);
+        right: 0;
+        font-size: rpx(10);
+        transform: rotate(-50deg)
+    }
+}
+
+.fixedBg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f5f5f5;
+    z-index: -1;
+}

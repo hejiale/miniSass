@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@import "./function";
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+@mixin react($w) {
+  width: $w;
+  height: $w;
+}
+
+@mixin circle($w) {
+  @include react($w);
+  border-radius: 50%;
+}
+
+@mixin text-weight($size: rpx(17)) {
+  font-weight: bold;
+  font-size: $size;
+  color: $black;
+}
+
+@mixin text-gray($size: rpx(12)) {
+  font-weight: 400;
+  font-size: $size;
+  color: $black;
+}
+
+// 超出一行显示省略号
+@mixin text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden
+}
+
+// 超出多行显示省略号
+@mixin text-overflow-line($line: 2) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  word-break: break-all;
+}
+
+// 绝对居中
+@mixin abscenter {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// 固定居中
+@mixin fiexcenter {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// 水平排列
+@mixin hor {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap
+}
+
+// hor-水平方向-垂直方向
+@mixin hor-center-center {
+  @include hor;
+  justify-content: center;
+  align-items: center;
+}
+@mixin hor-between-center {
+  @include hor;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin hor-around-center {
+  @include hor;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin hor-start-center {
+  @include hor;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin hor-end-center {
+  @include hor;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin hor-center-end {
+  @include hor;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+// 垂直排列
+@mixin ver {
+  display: flex;
+  flex-direction: column
+}
+
+// 垂直排列
+@mixin ver-center {
+  @include ver;
+  align-items: center;
+}
+
+// ver-水平方向-垂直方向
+@mixin ver-center-center {
+  @include ver;
+  align-items: center;
+  justify-content: center
+}
+
+@mixin text-custom ($weight, $size, $color) {
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  font-family: PingFang SC-Medium, PingFang SC;
+}
+
+
